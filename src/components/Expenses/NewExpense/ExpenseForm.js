@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import './ExpenseForm.css';
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
 
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAmount, setEnteredAmount] = useState('');
@@ -34,6 +34,7 @@ const ExpenseForm = () => {
         <input type='date' min='2022-01-01' max='2024-12-31' onChange={dataChangeHandler}/>
       </div>
       <div className='new-expense__actions'>
+        <button type='button'onClick={props.onCancel}>Cancel</button>
         <button type='submit'>Add Expense</button>
       </div>
       </div>
